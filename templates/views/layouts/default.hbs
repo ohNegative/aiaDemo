@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>aia-demo</title>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+		<link href="/styles/site.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+		
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor 
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+		
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" />
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" />
+		<![endif]-->
+		
+	</head>
+    
+    
+            <!-- handlebars navigation -->
+        <!--<div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                    {{# each navLinks}}
+                    <li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+                        <a href="{{ href }}">{{ label }}</a>
+                    </li>
+                {{/each}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {{#if user}}
+                <li><a href="/keystone/signout">Sign Out</a></li>
+                {{else}}
+                <li><a href="/keystone/signin">Sign In</a></li>
+                {{/if}}
+            </ul>
+        </div>-->
+    
+<body class="home">
+<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+				<!-- Button for smallest screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+				<a class="navbar-brand" href="/"><img src="/images/company-logo.png" alt="Progressus HTML5 template"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="/">Home</a></li>
+					<!--<li><a href="/work">Work</a></li>-->
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/residential">Residential</a></li>
+							<li><a href="/commercial">Commerical</a></li>
+						</ul>
+					</li>
+					<li><a href="/contact">Contact</a></li>
+					<!--<li><a class="btn" href="/keystone">SIGN IN</a></li>-->
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</div> 
+	<!-- /.navbar -->
+
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+			<div class="row">
+				<h1 class="lead">MODERN SUSTAINABLE LIVEABLE SPACES</h1>
+				<p class="tagline">HELGHAST DESIGN is a modern residential and commercial architecture firm located in Minneapolis, MN.</p>
+				<p><a href="/contact" class="btn btn-default btn-lg" role="button">CONTACT US</a> <a href="/work" class="btn btn-action btn-lg" role="button">OUR WORK</a></p>
+			</div>
+		</div>
+	</header>
+	<!-- /Header -->
+		<div id="body">
+			<!--
+				Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages, etc
+			-->
+			{{#if messages}}
+			<div id="flash-messages" class="container">
+				{{#if messages.info}}
+				<div class="alert alert-info">
+						{{{flashMessages messages.info}}}
+				</div>
+				{{/if}}
+				{{#if messages.success}}
+				<div class="alert alert-success">
+						{{{flashMessages messages.success}}}
+				</div>
+				{{/if}}
+				{{#if messages.warning}}
+				<div class="alert alert-warning">
+						{{{flashMessages messages.warning}}}
+				</div>
+				{{/if}}
+				{{#if messages.error}}
+				<div class="alert alert-danger">
+						{{{flashMessages messages.error}}}
+				</div>
+				{{/if}}
+			</div>
+			{{/if}}
+			<!-- The content block should contain the body of your template's content-->
+			{{{body}}}
+		</div>
+		<footer id="footer" class="top-space">
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+					
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Contact</h3>
+						<div class="widget-body">
+							<p>Helghast Design<br>
+                                952.223.6565<br>
+                                6320 Westwood Court <br> Edina, MN. 55436
+								<a href="mailto:#">some.email@somewhere.com</a><br>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Follow me</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href=""><i class="fa fa-twitter fa-2"></i></a>
+								<a href=""><i class="fa fa-dribbble fa-2"></i></a>
+								<a href=""><i class="fa fa-github fa-2"></i></a>
+								<a href=""><i class="fa fa-facebook fa-2"></i></a>
+							</p>	
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<h3 class="widget-title">Text widget</h3>
+						<div class="widget-body">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
+							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+		<div class="footer2">
+			<div class="container">
+				<div class="row">					
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="simplenav">
+								<a href="#">Home</a> | 
+								<a href="sidebar-right.html">Services</a> |
+								<a href="/residential">Residential</a> |
+                                <a href="/commercial">Commercial</a> |
+								<b><a href="/contact">Contact</a></b>
+							</p>
+						</div>
+					</div>
+
+					<div class="col-md-6 widget">
+						<div class="widget-body">
+							<p class="text-right">
+								Copyright &copy; 2014, <a href="http://thirteen.mn" rel="designer">Six13 Technologies</a> 
+							</p>
+						</div>
+					</div>
+
+				</div> <!-- /row of widgets -->
+			</div>
+		</div>
+
+	</footer>	
+		{{!--
+			//- jQuery 1.11.1 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.1 (also bundled) for better performance.
+		--}}
+		<script src="/js/lib/jquery/jquery-1.11.1.min.js"></script>
+		{{!--
+			//- Customise which Bootstrap javascript files are served by including
+			//- them specifically here, instead of bootstrap-3.2.0.min.js
+		--}}
+		<script src="/js/lib/bootstrap/bootstrap-3.2.0.min.js"></script>
+        <script src="/js/lib/invoke.js"></script>
+		{{{isAdminEditorJS user}}}
+        
+	</body>
+</html>
